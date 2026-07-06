@@ -16,6 +16,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - uses: actions/setup-node@v4
-      
+        
       - run: npm ci
       - run: npm test
+
+      - uses:  completely/fakeaction@V2
+        with:
+            arg1: {{ secret.supersecret }}
+            
